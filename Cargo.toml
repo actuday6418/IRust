@@ -1,18 +1,18 @@
-[workspace]
-resolver = "2"
+[package]
+name = "irust"
+version = "0.71.24"
+edition = "2021"
 
-members = [
-    "crates/irust",
-    "crates/printer",
-    "crates/irust_api",
-    "crates/irust_repl",
-]
+
+[dependencies]
+chrono = "*"
+reedline = {version="0.35"}
+inkjet = {version="0.11", default-features=false, features=["language-rust", "terminal", "theme"]}
+nu-ansi-term="*"
+termcolor="*"
+crossterm = "*"
+irust_repl = "*"
 
 [profile.release]
-strip = true
-lto = true
-
-
-# flamegraph
-# [profile.release]
-# debug = true
+strip = "true"
+lto = "true"
