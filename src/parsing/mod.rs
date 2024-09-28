@@ -21,7 +21,7 @@ pub fn parse_command(cmd_trimmed: &str) -> Command {
             Command::Help(cmd_trimmed[5..].trim_start().to_string())
         }
         _ if cmd_trimmed.starts_with(":add") => {
-            Command::Add(cmd_trimmed[5..].trim_start().to_string())
+            Command::Add(cmd_trimmed[4..].trim_start().to_string())
         }
         _ => Command::Rust(cmd_trimmed.to_string()),
     }
